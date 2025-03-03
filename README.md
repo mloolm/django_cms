@@ -1,6 +1,6 @@
-# Website Engine Template for NGO/NPO or Other Purposes
+# DjangoCMS - Website Engine Template any Purposes
 
-This project allows you to quickly deploy and customize a website for NGO/NPO or other purposes. It provides a robust foundation with essential features and modules.
+This project allows you to quickly deploy and customize a website for any purposes. It provides a robust foundation with essential features and modules.
 
 ## Features
 
@@ -26,8 +26,8 @@ This project allows you to quickly deploy and customize a website for NGO/NPO or
 ### Clone the repository:
 
 ```sh
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/mloolm/django_cms.git
+cd django_cms
 ```
 
 ### Install Docker if it’s not already installed:
@@ -144,7 +144,7 @@ If you encounter any issues or have questions, feel free to open an issue on the
 
 ## Author
 
-**Pavel Krasheninin** - [GitHub Profile](https://github.com/yourusername)
+**Pavel Krasheninin** - [GitHub Profile](https://github.com/mloolm) 
 
 ## Notes
 
