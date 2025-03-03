@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% load extra_filters %}
+{% load i18n %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        .custom-link {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 14px;
+        }
+    </style>
+{% endblock %}
+{% block nav-global %}
+    {{ block.super }}
+    <a  class="custom-link" href="{% url 'two_factor:profile' %}">{% trans "Set up 2FA" %}</a>
+    <form action="{% url 'admin-set-lang'%}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <select name="language_code" onchange="this.form.submit();">
+            {% for lang in languages_ %}
+                <option value="{{ lang.short }}" {% if LANGUAGE_CODE == lang.short %}selected{% endif %}>{{ lang.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+{% endblock %}
+

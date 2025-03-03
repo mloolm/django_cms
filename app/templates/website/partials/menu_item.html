@@ -1,0 +1,26 @@
+
+        {% if item_.children %}
+            <li class="dropdown-submenu dropend">
+                <a class="dropdown-item dropdown-toggle"
+                 href="{% if item_.url == 'none' %}#{% else %}{{ lang_url_ }}{{ item_.url }}{% endif %}"
+                >{{ item_.title }}</a>
+
+
+               <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+                {% for child in item_.children %}
+                    {% include 'website/partials/menu_item.html' with item_=child%}
+                {% endfor %}
+
+               </ul>
+            </li>
+        {% else %}
+            <li>
+            <a class="dropdown-item"
+               href="{% if item_.url == 'none' %}#{% else %}{{ lang_url_ }}{{ item_.url }}{% endif %}"
+            >{{ item_.title }}</a>
+            </li>
+        {% endif %}
+
+
+
+

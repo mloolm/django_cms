@@ -1,0 +1,34 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans 'Gallery' %}</title>
+</head>
+<body>
+    <ul>
+        {% for file in files %}
+            <li >
+                <img src="{{ file.url }}" alt="" height="100px" class="gallery-image-item" data-file-url="{{ file.url }}">
+                <form action="{% url 'delete_file' file.name %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">{% trans 'Delete' %}</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <script>
+          function insertImage(fileUrl) {
+    // Передача URL изображения в родительское окно
+    window.parent.tinymce.activeEditor.insertContent('<img src="' + fileUrl + '" alt="">');
+    window.parent.tinymce.activeEditor.windowManager.close();
+}
+
+document.querySelectorAll(".gallery-image-item").forEach(item => {
+    item.addEventListener("click", function () {
+        let fileUrl = this.getAttribute('data-file-url');
+        insertImage(fileUrl); // Вставка изображения
+    });
+});
+    </script>
+</body>
+</html>

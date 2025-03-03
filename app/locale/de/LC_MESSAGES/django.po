@@ -1,0 +1,326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-27 19:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/apps.py:9
+msgid "Site content"
+msgstr "Seiteninhalt"
+
+#: blog/models/cache_control.py:12 blog/models/cache_control.py:13
+msgid "Cache"
+msgstr "Zwischenspeicher"
+
+#: blog/models/category_model.py:12
+msgid "Category name"
+msgstr "Kategoriename"
+
+#: blog/models/category_model.py:39 blog/models/post_model.py:21
+msgid "Category"
+msgstr "Kategorie"
+
+#: blog/models/category_model.py:40 templates/website/post.html:53
+msgid "Categories"
+msgstr "Kategorien"
+
+#: blog/models/contacts.py:10 blog/models/footer_menu.py:14
+#: blog/models/menu_model.py:6 blog/models/page_model.py:19
+#: blog/models/post_model.py:30 blog/models/social.py:18
+msgid "Title"
+msgstr "Titel"
+
+#: blog/models/contacts.py:13
+msgid "Value"
+msgstr "Wert"
+
+#: blog/models/contacts.py:19
+msgid "Contact"
+msgstr "Kontakt"
+
+#: blog/models/contacts.py:20 templates/website/partials/contacts.html:5
+msgid "Contacts"
+msgstr "Kontakte"
+
+#: blog/models/footer_menu.py:16
+msgid "Column 1"
+msgstr "Spalte 1"
+
+#: blog/models/footer_menu.py:17
+msgid "Column 2"
+msgstr "Spalte 2"
+
+#: blog/models/footer_menu.py:20
+msgid "Column"
+msgstr "Spalte"
+
+#: blog/models/footer_menu.py:26 blog/models/footer_menu.py:27
+msgid "Footer menu"
+msgstr "Fußzeilenmenü"
+
+#: blog/models/menu_model.py:22 blog/models/menu_model.py:23
+msgid "Main menu"
+msgstr "Hauptmenü"
+
+#: blog/models/page_model.py:20 blog/models/post_model.py:31
+msgid "Content"
+msgstr "Inhalt"
+
+#: blog/models/page_model.py:26
+msgid "Page"
+msgstr "Seite"
+
+#: blog/models/page_model.py:27
+msgid "Pages"
+msgstr "Seiten"
+
+#: blog/models/post_model.py:20 blog/models/settings.py:12
+#: blog/models/social.py:24
+msgid "Image"
+msgstr "Bild"
+
+#: blog/models/post_model.py:32
+msgid "Caption"
+msgstr "Beschriftung"
+
+#: blog/models/post_model.py:45
+msgid "Post"
+msgstr "Beitrag"
+
+#: blog/models/post_model.py:46
+msgid "Posts"
+msgstr "Beiträge"
+
+#: blog/models/settings.py:10
+msgid "Site name"
+msgstr "Seitenname"
+
+#: blog/models/settings.py:11
+msgid "Site description"
+msgstr "Seitenbeschreibung"
+
+#: blog/models/settings.py:13
+msgid "Site icon"
+msgstr "Seitenicon"
+
+#: blog/models/settings.py:15
+msgid "Title of the section with publications"
+msgstr "Titel des Abschnitts mit Veröffentlichungen"
+
+#: blog/models/settings.py:17
+msgid ""
+"Changes to this setting will only take effect after the application is "
+"restarted."
+msgstr ""
+
+#: blog/models/settings.py:18
+msgid "URL of the section with publications"
+msgstr "URL des Abschnitts mit Veröffentlichungen"
+
+#: blog/models/settings.py:20 blog/models/settings.py:21
+#| msgid "Settings"
+msgid "Site settings"
+msgstr "Einstellungen"
+
+#: blog/models/social.py:11
+msgid "Only files with the .svg extension are allowed"
+msgstr "Nur Dateien mit der Endung .svg sind erlaubt"
+
+#: blog/models/utils.py:29
+msgid "Home"
+msgstr "Startseite"
+
+#: blog/models/utils.py:45
+msgid "URL can contain only Latin letters, numbers and hyphens."
+msgstr ""
+"Die URL darf nur lateinische Buchstaben, Zahlen und Bindestriche enthalten."
+
+#: blog/views/post_list_views.py:34 blog/views/post_list_views.py:47
+#: blog/views/post_list_views.py:62 blog/views/post_list_views.py:77
+#: blog/views/post_views.py:22 blog/views/post_views.py:25
+#: blog/views/post_views.py:35 blog/views/post_views.py:42
+#: blog/views/post_views.py:45 blog/views/static_page_views.py:74
+#: templates/404.html:3
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: donations/apps.py:7 donations/views.py:13
+msgid "Donations"
+msgstr "Spenden"
+
+#: donations/models/crypto_model.py:7
+msgid "Name"
+msgstr "Name"
+
+#: donations/models/crypto_model.py:8
+msgid "Wallet"
+msgstr "Brieftasche"
+
+#: donations/models/crypto_model.py:14
+msgid "Crypto wallet"
+msgstr "Krypto-Brieftasche"
+
+#: donations/models/crypto_model.py:15
+msgid "Crypto wallets"
+msgstr "Krypto-Brieftaschen"
+
+#: donations/models/donations_common.py:11
+msgid "Payment name"
+msgstr "Zahlungsname"
+
+#: donations/models/donations_common.py:12
+msgid "Donation amount by default"
+msgstr "Standard-Spendenbetrag"
+
+#: donations/models/donations_common.py:13
+msgid "Currency"
+msgstr "Währung"
+
+#: donations/models/donations_common.py:26
+msgid "Setting"
+msgstr "Einstellung"
+
+#: donations/models/donations_common.py:27
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: templates/400.html:4
+msgid "Bad Request"
+msgstr "Ungültige Anfrage"
+
+#: templates/403.html:4
+msgid "Forbidden"
+msgstr "Verboten"
+
+#: templates/410.html:4
+msgid "Gone"
+msgstr "Nicht mehr verfügbar"
+
+#: templates/500.html:4
+msgid "Internal Server Error"
+msgstr "Interner Serverfehler"
+
+#: templates/502.html:4
+msgid "Bad Gateway"
+msgstr "Fehlerhaftes Gateway"
+
+#: templates/503.html:4
+msgid "Service Unavailable"
+msgstr "Dienst nicht verfügbar"
+
+#: templates/admin/base_site.html:19 templates/admin/index.html:12
+msgid "Set up 2FA"
+msgstr "2FA einrichten"
+
+#: templates/donations/cancel.html:8
+msgid "Payment Canceled"
+msgstr "Zahlung abgebrochen"
+
+#: templates/donations/cancel.html:9
+msgid ""
+"You have canceled the payment. If this happened by mistake, please try again."
+msgstr ""
+"Sie haben die Zahlung abgebrochen. Wenn dies versehentlich geschah, bitte "
+"erneut versuchen."
+
+#: templates/donations/cancel.html:10
+msgid "Return to the donations page"
+msgstr "Zurück zur Spenden-Seite"
+
+#: templates/donations/cancel.html:11 templates/donations/success.html:12
+msgid "Return to the main page"
+msgstr "Zurück zur Hauptseite"
+
+#: templates/donations/donation_form.html:11
+msgid "Donation"
+msgstr "Spende"
+
+#: templates/donations/form/donation.html:18
+msgid "One time"
+msgstr "Einmalig"
+
+#: templates/donations/form/donation.html:19
+msgid "Subscription"
+msgstr "Abonnement"
+
+#: templates/donations/form/donation.html:26
+msgid "Amount"
+msgstr "Betrag"
+
+#: templates/donations/form/donation.html:35
+msgid "Donate"
+msgstr "Spenden"
+
+#: templates/donations/form/donation.html:49
+msgid "Copied"
+msgstr "Kopiert"
+
+#: templates/donations/form/donation.html:50
+msgid "Copy"
+msgstr "Kopieren"
+
+#: templates/donations/success.html:10
+msgid "Thank you for your donation!"
+msgstr "Vielen Dank für Ihre Spende!"
+
+#: templates/donations/success.html:11
+msgid "Your payment has been successfully completed."
+msgstr "Ihre Zahlung wurde erfolgreich abgeschlossen."
+
+#: templates/gallery/gallery.html:5
+msgid "Gallery"
+msgstr "Galerie"
+
+#: templates/gallery/gallery.html:14
+msgid "Delete"
+msgstr "Löschen"
+
+#: templates/two_factor/_wizard_actions.html:5
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: templates/two_factor/_wizard_actions.html:10
+#: templates/two_factor/_wizard_actions.html:12
+msgid "Back"
+msgstr "Zurück"
+
+#: templates/two_factor/_wizard_actions.html:14
+msgid "Next"
+msgstr "Weiter"
+
+#: templates/website/error.html:38
+msgid "Back to home page"
+msgstr "Zurück zur Startseite"
+
+#: templates/website/partials/footer.html:7
+msgid "Get Updates"
+msgstr "Erhalten Sie Updates"
+
+#: templates/website/partials/footer.html:14
+msgid "Navigation"
+msgstr "Navigation"
+
+#: templates/website/partials/menu.html:12
+msgid "Menu is not set. Visit"
+msgstr "Menü ist nicht festgelegt. Besuchen Sie"
+
+#: templates/website/partials/menu.html:12
+msgid "admin panel"
+msgstr "Admin-Panel"
+
+#~ msgid "Donation settings"
+#~ msgstr "Spendeneinstellungen"

@@ -1,0 +1,55 @@
+{% load i18n %}
+<footer class="bg-dark py-4 mt-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-md-3">
+              {% if socials_ %}
+                <h5 class="text-white mb-4">{% translate 'Get Updates' %}</h5>
+                {% include 'website/partials/social.html' with mode='footer' %}
+              {% endif %}
+          </div>
+
+          {% if footer_menu %}
+              <div class="col-12 col-md-6">
+                <h5 class="mb-4 text-white">{% trans 'Navigation' %}</h5>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            {% if 1 in footer_menu  %}
+                                <ul class="nav flex-column text-primary-hover">
+                                    {% for menu_item in footer_menu.1 %}
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                         </div>
+
+
+                          <div class="col-12 col-md-6">
+                            {% if 2 in footer_menu  %}
+                                <ul class="nav flex-column text-primary-hover">
+                                    {% for menu_item in footer_menu.2 %}
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                          </div>
+                    </div>
+              </div>
+
+          {% else %}
+              <div class="col-12 col-md-3"></div>
+              <div class="col-12 col-md-3"></div>
+          {% endif %}
+
+          <div class="col-12 col-md-3">
+
+              {% include 'website/partials/contacts.html' with mode='footer'%}
+          </div>
+      </div>
+
+  </div>
+</footer>

@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Bad Request' %}{% endblock %}
+
+{% block content %}
+    {% include 'website/error.html' with title='Something went wrong with your request' code="400" text="The server could not understand your request. Please check the request and try again" %}
+ {% endblock %}

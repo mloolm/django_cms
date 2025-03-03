@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-27 19:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: blog/apps.py:9
+msgid "Site content"
+msgstr "Контент"
+
+#: blog/models/cache_control.py:12 blog/models/cache_control.py:13
+msgid "Cache"
+msgstr "Кэш"
+
+#: blog/models/category_model.py:12
+msgid "Category name"
+msgstr "Название категории"
+
+#: blog/models/category_model.py:39 blog/models/post_model.py:21
+msgid "Category"
+msgstr "Категория"
+
+#: blog/models/category_model.py:40 templates/website/post.html:53
+msgid "Categories"
+msgstr "Категории"
+
+#: blog/models/contacts.py:10 blog/models/footer_menu.py:14
+#: blog/models/menu_model.py:6 blog/models/page_model.py:19
+#: blog/models/post_model.py:30 blog/models/social.py:18
+msgid "Title"
+msgstr "Заголовок"
+
+#: blog/models/contacts.py:13
+msgid "Value"
+msgstr "Значение"
+
+#: blog/models/contacts.py:19
+msgid "Contact"
+msgstr "Контакт"
+
+#: blog/models/contacts.py:20 templates/website/partials/contacts.html:5
+msgid "Contacts"
+msgstr "Контакты"
+
+#: blog/models/footer_menu.py:16
+msgid "Column 1"
+msgstr "Колонка 1"
+
+#: blog/models/footer_menu.py:17
+msgid "Column 2"
+msgstr "Колонка 2"
+
+#: blog/models/footer_menu.py:20
+msgid "Column"
+msgstr "Колонка"
+
+#: blog/models/footer_menu.py:26 blog/models/footer_menu.py:27
+msgid "Footer menu"
+msgstr "Меню подвала"
+
+#: blog/models/menu_model.py:22 blog/models/menu_model.py:23
+msgid "Main menu"
+msgstr "Главное меню"
+
+#: blog/models/page_model.py:20 blog/models/post_model.py:31
+msgid "Content"
+msgstr "Содержимое"
+
+#: blog/models/page_model.py:26
+msgid "Page"
+msgstr "Страница"
+
+#: blog/models/page_model.py:27
+msgid "Pages"
+msgstr "Страницы"
+
+#: blog/models/post_model.py:20 blog/models/settings.py:12
+#: blog/models/social.py:24
+msgid "Image"
+msgstr "Изображение"
+
+#: blog/models/post_model.py:32
+msgid "Caption"
+msgstr "Подпись"
+
+#: blog/models/post_model.py:45
+msgid "Post"
+msgstr "Публикация"
+
+#: blog/models/post_model.py:46
+msgid "Posts"
+msgstr "Публикации"
+
+#: blog/models/settings.py:10
+msgid "Site name"
+msgstr "Название сайта"
+
+#: blog/models/settings.py:11
+msgid "Site description"
+msgstr "Описание сайта"
+
+#: blog/models/settings.py:13
+msgid "Site icon"
+msgstr "Иконка сайта"
+
+#: blog/models/settings.py:15
+msgid "Title of the section with publications"
+msgstr "Заголовок раздела с публикациями"
+
+#: blog/models/settings.py:17
+msgid ""
+"Changes to this setting will only take effect after the application is "
+"restarted."
+msgstr ""
+"Изменения в этой настройке вступят в силу только после перезапуска "
+"приложения."
+
+#: blog/models/settings.py:18
+msgid "URL of the section with publications"
+msgstr "URL раздела с публикациями"
+
+#: blog/models/settings.py:20 blog/models/settings.py:21
+#| msgid "Settings"
+msgid "Site settings"
+msgstr "Настройки сайта"
+
+#: blog/models/social.py:11
+msgid "Only files with the .svg extension are allowed"
+msgstr "Разрешены только файлы с расширением .svg"
+
+#: blog/models/utils.py:29
+msgid "Home"
+msgstr "Главная"
+
+#: blog/models/utils.py:45
+msgid "URL can contain only Latin letters, numbers and hyphens."
+msgstr "URL может содержать только латинские буквы, цифры и дефисы."
+
+#: blog/views/post_list_views.py:34 blog/views/post_list_views.py:47
+#: blog/views/post_list_views.py:62 blog/views/post_list_views.py:77
+#: blog/views/post_views.py:22 blog/views/post_views.py:25
+#: blog/views/post_views.py:35 blog/views/post_views.py:42
+#: blog/views/post_views.py:45 blog/views/static_page_views.py:74
+#: templates/404.html:3
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: donations/apps.py:7 donations/views.py:13
+msgid "Donations"
+msgstr "Пожертвования"
+
+#: donations/models/crypto_model.py:7
+msgid "Name"
+msgstr "Название"
+
+#: donations/models/crypto_model.py:8
+msgid "Wallet"
+msgstr "Кошелек"
+
+#: donations/models/crypto_model.py:14
+msgid "Crypto wallet"
+msgstr "Крипто кошелек"
+
+#: donations/models/crypto_model.py:15
+msgid "Crypto wallets"
+msgstr "Крипто кошельки"
+
+#: donations/models/donations_common.py:11
+msgid "Payment name"
+msgstr "Название платежа"
+
+#: donations/models/donations_common.py:12
+msgid "Donation amount by default"
+msgstr "Сумма пожертвования по умолчанию"
+
+#: donations/models/donations_common.py:13
+msgid "Currency"
+msgstr "Валюта"
+
+#: donations/models/donations_common.py:26
+msgid "Setting"
+msgstr "Настройки"
+
+#: donations/models/donations_common.py:27
+msgid "Settings"
+msgstr "Настройки"
+
+#: templates/400.html:4
+msgid "Bad Request"
+msgstr "Неверный запрос"
+
+#: templates/403.html:4
+msgid "Forbidden"
+msgstr "Доступ запрещён"
+
+#: templates/410.html:4
+msgid "Gone"
+msgstr "Удалено"
+
+#: templates/500.html:4
+msgid "Internal Server Error"
+msgstr "Внутренняя ошибка сервера"
+
+#: templates/502.html:4
+msgid "Bad Gateway"
+msgstr "Ошибка шлюза"
+
+#: templates/503.html:4
+msgid "Service Unavailable"
+msgstr "Сервис недоступен"
+
+#: templates/admin/base_site.html:19 templates/admin/index.html:12
+msgid "Set up 2FA"
+msgstr "Настроить двухфакторную аутентификацию"
+
+#: templates/donations/cancel.html:8
+msgid "Payment Canceled"
+msgstr "Платёж отменён"
+
+#: templates/donations/cancel.html:9
+msgid ""
+"You have canceled the payment. If this happened by mistake, please try again."
+msgstr ""
+"Вы отменили платёж. Если это произошло случайно, пожалуйста, попробуйте "
+"снова."
+
+#: templates/donations/cancel.html:10
+msgid "Return to the donations page"
+msgstr "Вернуться на страницу пожертвований"
+
+#: templates/donations/cancel.html:11 templates/donations/success.html:12
+msgid "Return to the main page"
+msgstr "Вернуться на главную страницу"
+
+#: templates/donations/donation_form.html:11
+msgid "Donation"
+msgstr "Пожертвование"
+
+#: templates/donations/form/donation.html:18
+msgid "One time"
+msgstr "Один раз"
+
+#: templates/donations/form/donation.html:19
+msgid "Subscription"
+msgstr "Подписка"
+
+#: templates/donations/form/donation.html:26
+msgid "Amount"
+msgstr "Сумма"
+
+#: templates/donations/form/donation.html:35
+msgid "Donate"
+msgstr "Пожертвовать"
+
+#: templates/donations/form/donation.html:49
+msgid "Copied"
+msgstr "Скопировано"
+
+#: templates/donations/form/donation.html:50
+msgid "Copy"
+msgstr "Копировать"
+
+#: templates/donations/success.html:10
+msgid "Thank you for your donation!"
+msgstr "Спасибо за ваше пожертвование!"
+
+#: templates/donations/success.html:11
+msgid "Your payment has been successfully completed."
+msgstr "Ваш платёж успешно завершён."
+
+#: templates/gallery/gallery.html:5
+msgid "Gallery"
+msgstr "Галерея"
+
+#: templates/gallery/gallery.html:14
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/two_factor/_wizard_actions.html:5
+msgid "Cancel"
+msgstr "Отменить"
+
+#: templates/two_factor/_wizard_actions.html:10
+#: templates/two_factor/_wizard_actions.html:12
+msgid "Back"
+msgstr "Назад"
+
+#: templates/two_factor/_wizard_actions.html:14
+msgid "Next"
+msgstr "Далее"
+
+#: templates/website/error.html:38
+msgid "Back to home page"
+msgstr "Вернуться на главную страницу"
+
+#: templates/website/partials/footer.html:7
+msgid "Get Updates"
+msgstr "Получить обновления"
+
+#: templates/website/partials/footer.html:14
+msgid "Navigation"
+msgstr "Навигация"
+
+#: templates/website/partials/menu.html:12
+msgid "Menu is not set. Visit"
+msgstr "Меню не настроено. Посетите"
+
+#: templates/website/partials/menu.html:12
+msgid "admin panel"
+msgstr "панель администратора"
+
+#~ msgid "Donation settings"
+#~ msgstr "Пожертвования"
+
+#~ msgid "Deutsch"
+#~ msgstr "Немецкий"
+
+#~ msgid "English"
+#~ msgstr "Английский"

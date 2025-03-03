@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+{% block title %}{{ meta_title|default:'' }}{% endblock %}
+{% block meta_description %}{{ meta_description|default:'' }}{% endblock %}
+
+{% block content %}
+
+    <section class="static-content">
+        {% if page_type == 'db' %}
+
+            {% include 'website/partials/breadcrumbs.html' %}
+
+            {% if title %}
+                <h2>{{ title }}</h2>
+            {% endif %}
+                {{ page_content | safe }}
+        {% else %}
+              {% include partial_path %}
+        {% endif %}
+    </section>
+
+
+{% endblock %}
+

@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Page not found' %}{% endblock %}
+
+{% block content %}
+     {% include 'website/error.html' with title='Page Not Found!' code="404" text="Either something went wrong or this page doesn't exist anymore." %}
+{% endblock %}
+

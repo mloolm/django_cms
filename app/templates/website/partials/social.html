@@ -1,0 +1,15 @@
+{% if socials_ %}
+    <ul class="socials {{ mode }} {% if not social_line.image %}no-icon{% endif %}">
+        {% for social_line in socials_ %}
+            <li>
+                <a href="{{ social_line.url }}">
+                    {% if social_line.image %}
+                        <span class="ext-icon" data-icon data-icon-url="{{ social_line.image.url }}"></span>
+                    {% endif %}
+                    <span class="social-title">{{ social_line.title }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+

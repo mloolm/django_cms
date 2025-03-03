@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Forbidden' %}{% endblock %}
+
+{% block content %}
+    {% include 'website/error.html' with title="You don't have permission to access this page" code="403" text="You might not have the necessary rights to view this page" %}
+ {% endblock %}

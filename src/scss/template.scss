@@ -1,0 +1,62 @@
+@for $i from 1 through 16 {
+  @for $j from 1 through 16 {
+    .aspect-#{$i}-#{$j} {
+      aspect-ratio: #{$i} / #{$j};
+    }
+  }
+}
+
+@for $i from 4 through 16 {
+  .h-#{$i * 50} {
+    height: #{$i * 50}px;
+  }
+}
+
+@for $i from 4 through 16 {
+  .w-#{$i * 50} {
+    width: #{$i * 50}px;
+  }
+}
+
+@for $i from 8 through 50 {
+  .fs-#{$i} {
+    font-size: #{$i}px!important;
+  }
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягиваем на всю высоту экрана */
+}
+
+.main-content {
+  flex: 1;
+}
+
+
+.circle-img {
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.ext-icon {
+  display: inline-block;
+  fill: currentColor !important;
+  text-align: center;
+}
+
+.nice-border{
+
+}
+.nice-border.nice-border-left{
+  border-left: 2px solid rgba(13, 110, 253, 0.1);
+
+}

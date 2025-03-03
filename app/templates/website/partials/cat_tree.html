@@ -1,0 +1,20 @@
+<ul class="category-tree">
+    {% for category in category_tree %}
+        <li>
+            {% with current_url=root_url|add:blog_start_url_ %}
+
+            <a href="{{ current_url }}{{ category.url }}">{{ category.name }}</a>
+
+            {% if category.children %}
+                <ul>
+                    {% for child in category.children %}
+                        {% with current_url=current_url|add:category.url|add:"/" %}
+                            {% include 'website/partials/category_item.html' with category=child root_url=current_url%}
+                        {% endwith %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+         {% endwith %}
+    {% endfor %}
+</ul>

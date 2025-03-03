@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Gone' %}{% endblock %}
+
+{% block content %}
+    {% include 'website/error.html' with title="The page you're looking for is no longer available" code="410" text="The page you are looking for has been permanently removed or is no longer available" %}
+{% endblock %}

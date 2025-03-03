@@ -1,0 +1,53 @@
+{% load extra_filters %}
+<div class="card">
+    <div class="position-relative">
+
+        <img class="card-img d-none" src="/media/{{ post.image }}" alt="">
+        <div class="card-bg-image aspect-4-3 " style="background-image: url('/media/{{ post.image }}')">
+            <div class="h-100 w-100 p-3 d-flex flex-column card-on-image-title">
+                <div class="w-100 mt-auto ">
+                    <div class="p-2">
+                        <a href="{{ blog_start_url_ }}{{ flat_categories|get:post.category_id|get:'url' }}"
+                           class="badge text-bg-warning mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>
+                            {{ flat_categories|get:post.category_id|get:'name' }}
+                        </a>
+
+
+                        <h4 class="text-white mt-2"><a
+                            href="{{ blog_start_url_ }}{{ flat_categories|get:post.category_id|get:'url' }}{% if flat_categories|get:post.category_id|get:'url' %}/{% endif %}{{ post.url }}.html"
+                            class="btn-link text-reset fw-bold">
+                                {% if post.id in post_translations %}
+                                    {{ post_translations|get:post.id|get:"title" }}
+                                {% else %}
+                                    {{ post.title }}
+                                {% endif %}</a></h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="card-body px-0 pt-3">
+
+        <p class="card-text">
+            {% if post.id in post_translations %}
+                {% if post_translations|get:post.id|get:"snipet" %}
+                    {{ post_translations|get:post.id|get:"snipet"}}
+                {% endif %}
+            {% else %}
+                {% if post.snipet %}
+                        {{ post.snipet}}
+                {% endif %}
+            {% endif %}
+        </p>
+
+
+        <div class="nav nav-divider text-end small opacity-75">
+            {{ post.updated_at }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load extra_filters %}
+{% block title %}{{ meta_title|default:'' }}{% endblock %}
+{% block meta_description %}{{ meta_description|default:'' }}{% endblock %}
+
+
+
+{% block content %}
+    {% include 'website/partials/breadcrumbs.html' %}
+{% endblock %}

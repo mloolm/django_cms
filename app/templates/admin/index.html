@@ -1,0 +1,23 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+{% block sidebar %}
+    {{ block.super }}
+
+    <div class="extra-links-module module">
+    <table>
+        <caption>2FA</caption>
+        <tbody>
+            <tr class="model-category">
+                <th scope="row">
+                    <a href="{% url 'two_factor:profile' %}">{% trans "Set up 2FA" %}</a>
+                </th>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+
+
+{% endblock %}

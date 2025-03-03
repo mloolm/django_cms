@@ -1,0 +1,90 @@
+{% load extra_filters %}
+{% load i18n %}
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="/">
+				{% include 'website/partials/logo.html' %}
+			</a>
+
+            {% if not menu_ %}
+            <span class="navbar-text">
+                        {% translate 'Menu is not set. Visit' %} <a href="/admin">{% translate 'admin panel' %}</a>
+                    </span>
+            {% endif %}
+
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <ul class="navbar-nav navbar-nav-scroll mx-auto">
+                {% if menu_ %}
+                    {% for item_ in menu_ %}
+                        {% if not item_.children %}
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page"
+                                   href="{% if item_.url == 'none' %}#{% else %}{{ lang_url_ }}{{ item_.url }}{% endif %}">
+                                    {{ item_.title }}
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                    href="{% if item_.url == 'none' %}#{% else %}{{ lang_url_ }}{{ item_.url }}{% endif %}"
+                                 >{{ item_.title }}</a>
+                                <ul class="dropdown-menu">
+                                    {% for child in item_.children %}
+                                        {% include 'website/partials/menu_item.html' with item_=child %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+
+                {% endif %}
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" id="lang_dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ current_language }}
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="lang_dropdown">
+                            {% for lang in languages_ %}
+                                {% if not lang.short ==  current_language %}
+                                    <li><a class="dropdown-item" href="{{ lang.url }}">{{ lang.name }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        
+            <div class="nav flex-nowrap align-items-center ms-auto ">
+				
+				<div class="nav-item d-none d-md-block">
+					{% include 'website/partials/social.html' with mode="no-title inline" %}
+				</div>
+				
+				<!-- Offcanvas menu toggler -->
+				<div class="nav-item">
+					<a class="nav-link p-0" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+						<i class="bi bi-text-right rtl-flip fs-2" data-bs-target="#offcanvasMenu"> </i>
+					</a>
+				</div>
+			</div>
+
+                     <button class="navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="text-body h6 d-none d-sm-inline-block">Menu</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+        </div>
+
+
+
+    </nav>
+
+    
+<div class="border-bottom border-2 border-primary opacity-1"></div>

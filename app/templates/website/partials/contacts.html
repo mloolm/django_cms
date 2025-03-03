@@ -1,0 +1,14 @@
+{% load i18n %}
+{% if contacts_ %}
+    <div class="contacts-base {{ mode }}">
+    {% if not no_title %}
+        <h5>{% trans "Contacts" %}</h5>
+    {% endif %}
+
+    <ul class="nav flex-column text-primary-hover">
+        {% for contact in contacts_ %}
+            <li class="nav-item mb-2"><span class="contact-title">{{ contact.title }}:</span> <span class="contact-content">{{ contact.val }}</span></li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endif %}

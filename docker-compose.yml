@@ -1,0 +1,111 @@
+version: '3'
+
+services:
+  django:
+    image: python:3.9
+    container_name: django
+    volumes:
+      - ./app:/app
+      - ./requirements.txt:/app/requirements.txt
+      - shared-data:/shared
+    working_dir: /app
+    environment:
+      DJANGO_ENV: ${DJANGO_ENV}
+      DATABASE_NAME: ${DB_NAME}
+      DATABASE_USER: ${DB_USER}
+      DATABASE_PASSWORD: ${DB_PASSWORD}
+      DATABASE_HOST: dj_db
+      DATABASE_PORT: 3306
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLIC_KEY: ${STRIPE_PUBLIC_KEY}
+      PAYPAL_CLIENT_ID: ${PAYPAL_CLIENT_ID}
+      PAYPAL_CLIENT_SECRET: ${PAYPAL_CLIENT_SECRET}
+      PAYPAL_MODE: ${PAYPAL_MODE}
+      CACHEOPS_REDIS: "redis://redis:6379/1"
+      APP_POSTS_ON_PAGE: ${APP_POSTS_ON_PAGE}
+      APP_SECRET_KEY: ${APP_SECRET_KEY}
+      APP_HOST: ${APP_HOST}
+      LANGUAGE_CODE: ${LANGUAGE_CODE}
+      LANGUAGES: ${LANGUAGES}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - dj_db
+      - clam
+      - redis
+    networks:
+      - app-network
+    command: >
+      bash -c "
+        pip install -r requirements.txt &&
+        python manage.py makemigrations &&
+        python manage.py migrate &&
+        if [ \"$DJANGO_ENV\" = \"production\" ]; then 
+          gunicorn rs.wsgi:application --bind 0.0.0.0:8000; 
+        else 
+          python manage.py runserver 0.0.0.0:8000;
+        fi"
+  
+
+  redis:
+    image: redis:7
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - app-network
+
+  clam:
+    image: clamav/clamav:latest
+    container_name: clam
+    command: ["clamd", "--foreground=true"]
+    networks:
+      - app-network
+    ports:
+      - "3310:3310"
+    volumes:
+      - clamav-data:/var/lib/clamav
+      - shared-data:/shared
+
+  dj_db:
+    image: mysql:8.0
+    container_name: dj_db
+    environment:
+      MYSQL_MULTIPLE_DATABASES: ${DB_NAME},test_${DB_NAME}
+      MYSQL_ROOT_PASSWORD: MYSQL_RANDOM_ROOT_PASSWORD
+      #MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: dj_db
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "8080:80"
+    depends_on:
+      - dj_db
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+  clamav-data:
+  shared-data:
+  redis_data:
+
+networks:
+  app-network:
+    driver: bridge

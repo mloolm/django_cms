@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load extra_filters %}
+
+{% block title %}{{ meta_title|default:'' }}{% endblock %}
+{% block meta_description %}{{ meta_description|default:'' }}{% endblock %}
+
+{% block content %}
+
+    {% include 'website/partials/breadcrumbs.html' %}
+    <h2>{% trans "Donation" %}</h2>
+    <div class="row mt-4">
+        <div class="d-none d-md-block col-md-1 col-lg-2"></div>
+        <div class="col-12 col-md-10 col-lg-8 ">
+            <div class="p-4 p-sm-5 bg-info bg-opacity-10 rounded">
+            {% if providers %}
+                <form method="post">
+                    {% csrf_token %}
+                    {% include 'donations/form/donation.html' %}
+                </form>
+            {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

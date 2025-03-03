@@ -1,0 +1,10 @@
+
+.category-tree li{
+  list-style: none;
+  font-size: 22px;
+}
+
+.category-tree li a{
+  color: var(--bs-dark-gray)!important;
+  text-decoration: underline;
+}

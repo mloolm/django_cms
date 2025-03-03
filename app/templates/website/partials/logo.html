@@ -1,0 +1,9 @@
+{% if site_settings %}
+
+        {% if site_settings.image %}
+            <img src="{{ site_settings.image.url }}" alt="Logo" class="navbar-brand-item">
+        {% elif site_settings.title %}
+            {{ site_settings.title }}
+        {% endif %}
+
+{% endif %}

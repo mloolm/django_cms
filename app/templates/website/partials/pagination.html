@@ -1,0 +1,19 @@
+{% if pager.has_previous or pager.has_next %}
+    <div class="pagination">
+        <div class="step-links">
+            {% if pager.has_previous %}
+                <a href="?page=1">&laquo; Первая</a>
+                <a href="?page={{ pager.previous_page_number }}">Предыдущая</a>
+            {% endif %}
+    
+            <span class="current">
+                Страница {{ pager.number }} из {{ pager.paginator.num_pages }}.
+            </span>
+    
+            {% if pager.has_next %}
+                <a href="?page={{ pager.next_page_number }}">Следующая</a>
+                <a href="?page={{ pager.paginator.num_pages }}">Последняя &raquo;</a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

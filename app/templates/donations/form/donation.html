@@ -1,0 +1,59 @@
+{% load i18n %}
+{% load extra_filters %}
+<div class="donation" id="main_donation_form">
+
+        <div class="providers" data-action="switch" data-target="provider">
+            <div class="btn-group w-100" role="group">
+                {% for provider, data in providers.items %}
+                    <button data-value="{{ provider }}" type="button" data-donation-type="{{ data.donation_type|join:',' }}"
+                            class="btn btn-outline-info {% if data.default %}active{% endif %}">{{ data.name }}</button>
+                {% endfor %}
+            </div>
+            <input name="provider" type="hidden" value="">
+        </div>
+
+        <div data-content="money">
+            <div class="type mt-3" data-action="switch" data-target="donation_type">
+                <div class="btn-group w-100" role="group">
+                  <button data-value="one_time" type="button" class="btn btn-outline-dark">{% translate 'One time' %}</button>
+                  <button data-value="subscription" type="button" class="active btn btn-outline-dark">{% translate 'Subscription' %}</button>
+
+                </div>
+                <input name="donation_type" type="hidden" value="subscription">
+            </div>
+
+            <div class="amount mt-3">
+                <label for="d_amount">{% translate 'Amount' %}</label>
+                <div class="input-group">
+                    <input value="{{ d_settings.default_amount }}" name="amount" class="form-control" type="number" id="d_amount">
+                    <span class="input-group-text"><b>{{ d_settings.currency | upper}}</b></span>
+                </div>
+
+            </div>
+
+            <div class="actions text-end mt-5">
+                <button type="submit" class="btn btn-danger btn-lg ">{% trans 'Donate' %}</button>
+            </div>
+
+        </div>
+
+
+        <div data-content="crypto" class="d-none mt-5 donation-crypto" >
+            {% if providers.crypto %}
+                {% for wallet in providers.crypto.wallets %}
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">{{ wallet.name }}</span>
+                        <input type="text" class="form-control" data-wallet="{{ wallet.id }}" aria-label="{{ wallet.name }}" value="{{ wallet.wallet }}" readonly>
+                        <span class="input-group-text" data-target="{{ wallet.id }}" data-action="copy_wallet">
+                            <span class="btn btn-sm btn-outline-secondary">
+                                <span class="w-copied">{% translate 'Copied' %}</span>
+                                <span  class="w-copy">{% translate 'Copy' %}</span>
+                            </span>
+                        </span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+
+</div>

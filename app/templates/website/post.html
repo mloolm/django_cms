@@ -1,0 +1,59 @@
+{% extends 'blog/post.html' %}
+{% load i18n %}
+{% load extra_filters %}
+{% block content %}
+    {{ block.super }}
+
+    <section class="pt-2">
+    {% if post.image %}
+
+        <div class="row">
+            <div class="col-12">
+                <img alt="" src="/media/{{ post.image }}" class="d-none">
+                <div class="card bg-dark-overlay-5 overflow-hidden card-bg-scale h-400 text-center" style="background-image:url('/media/{{ post.image }}'); background-position: center left; background-size: cover;">
+                  
+                  <div class="card-img-overlay d-flex align-items-center p-3 p-sm-4 card-on-image-title">
+                    <div class="w-100 mt-auto">
+                      <!-- title -->
+                      <h2 class="text-white display-5">10 tell-tale signs you need to get a new startup.</h2>
+                      <!-- date -->
+                      <ul class="nav nav-divider text-white-force align-items-center justify-content-center">
+                        <li class="nav-item">{{ post.updated_at  }}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <h2>{% if post.id in post_translations %}
+                {{ post_translations|get:post.id|get:"title" }}
+            {% else %}
+                {{ post.title }}
+            {% endif %}
+        </h2>
+    {% endif %}
+</section>
+
+
+<section class="pt-0">
+    <div class="row">
+        <div class="col-12 col-lg-9">
+            <div class="post-content">
+                {% if post.id in post_translations %}
+                    {{ post_translations|get:post.id|get:"content" | safe }}
+                {% else %}
+                    {{ post.content | safe }}
+                {% endif %}
+
+            </div>
+            
+        </div>
+        <div class="d-none d-lg-block col-3 ">
+            <h4>{% translate 'Categories' %}</h4>
+            {% include 'website/partials/cat_tree.html' %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

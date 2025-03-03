@@ -1,0 +1,8 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Service Unavailable' %}{% endblock %}
+
+{% block content %}
+    {% include 'website/error.html' with title="The service is temporarily unavailable" code="503" text="The server is temporarily unable to handle your request" %}
+{% endblock %}

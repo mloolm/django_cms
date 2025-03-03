@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% load extra_filters %}
+{% block title %}{{ meta_title|default:'' }}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Payment Canceled" %}</h1>
+<p>{% trans "You have canceled the payment. If this happened by mistake, please try again." %}</p>
+<p><a href="/donations/">{% trans "Return to the donations page" %}</a></p>
+<p><a href="/">{% trans "Return to the main page" %}</a></p>
+    
+{% endblock %}

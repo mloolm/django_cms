@@ -1,0 +1,43 @@
+{% extends 'blog/post_list.html' %}
+{% load extra_filters %}
+
+{% block content %}
+    {{ block.super }}
+
+    {% if meta_title %}
+        <h2>{{ meta_title }}</h2>
+    {% endif %}
+
+
+        <section class="position-relative">
+
+            <div class="row">
+
+                <div class="col-12 col-lg-9">
+                    {% if posts %}
+                        <div class="row">
+                            {% for post in posts %}
+                                <div class="col-12 col-md-6">
+                                    {% include 'website/partials/post_snipet.html' %}
+                                </div>
+                            {% endfor %}
+
+                            {% include 'website/partials/pagination.html' with pager=posts%}
+
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="d-none d-lg-block col-12 col-lg-3">
+                    {% include 'website/partials/cat_tree.html' %}
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+
+{% endblock %}
